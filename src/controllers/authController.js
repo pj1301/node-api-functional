@@ -1,6 +1,6 @@
 const debug = require('debug')('app:authController');
 const express = require('express');
-const { findUser, createUser } = require('../services/dataService');
+const { findUser, createUser } = require('../services/userService');
 const { encryptPw, decryptPw } = require('../services/encryptionService');
 const { generateToken } = require('../services/authService');
 

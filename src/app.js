@@ -3,7 +3,7 @@ const debug = require('debug')('app');
 const express = require('express');
 const authRouter = require('./controllers/authController')();
 const { validateToken } = require('./services/authService');
-const { getUserIds } = require('./services/dataService');
+const { getUserIds } = require('./services/userService');
 
 const app = express();
 const port = process.env.PORT || 1234;

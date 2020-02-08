@@ -1,15 +1,8 @@
 const debug = require('debug')('app:dataService');
-const MongoClient = require('mongodb').MongoClient;
 const server = require('../environment/environment');
+const { getClient } = require('./mongoService');
 
-const mongodOpt = { useUnifiedTopology: true };
-const { apiUrl, dbName, userCollection } = server;
-
-const getClient = async () => {
-  const client = await MongoClient.connect(apiUrl, mongodOpt).catch(error => false);
-  if (!client) return false;
-  return client;
-}
+const { dbName, userCollection } = server;
 
 const findUser = async (usernameObj) => {
   debug(`Finding user ${usernameObj.username}`);
